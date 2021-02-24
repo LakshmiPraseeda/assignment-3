@@ -8,7 +8,7 @@ pipeline
 	{
 	stage('SCM GitCheckout'){
 	      steps{
-		    git credentialsId: 'fa1cca99-4fd9-4632-ba81-06fd2f6699fc', url: 'https://github.com/LakshmiPraseeda/assignment-3.git'
+		    git credentialsId: 'fa1cca99-4fd9-4632-ba81-06fd2f6699fc', url: 'https://github.com/LakshmiPraseeda/JenkinsWar.git'
 		    }
 		  }
 		stage('maven test'){
