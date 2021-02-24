@@ -17,13 +17,6 @@ pipeline
 		sh "mvn clean test surefire-report:report"
 		}
              }
-        stage('Test Case and Reports'){
-           steps{
-        echo "executing the test cases"
-        junit allowEmptyResults: true, testResults: '/var/lib/jenkins/workspace/Jenkins_git_maven_docker_terra_s3_1/target/surefire-reports/*.xml'
-        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/Jenkins_git_maven_docker_terra_s3_1/target/site', reportFiles: 'surefire-report.html', reportName: 'SureFireReportsHTML', reportTitles: ''])
-        }
-	}
 	stage('Package and Generate artifacts'){
 	steps{
 	sh "mvn clean package -DskipTests=true"
